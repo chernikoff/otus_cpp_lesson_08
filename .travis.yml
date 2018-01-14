@@ -1,0 +1,28 @@
+language: cpp
+compiler: clang
+sudo: required
+dist: trusty
+
+before_install:
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get install -qq libgtest-dev
+  - mkdir build-gtest
+  - cd build-gtest
+  - cmake /usr/src/gtest
+  - cmake --build .
+  - sudo cp *.a /usr/lib
+  - cd "${TRAVIS_BUILD_DIR}"
+    
+script:
+  - cmake .
+  - cmake --build .
+  - ctest -V
+  - cmake --build . --target package
+
+# deploy:
+#   provider: script
+#   skip_cleanup: true
+#   script:
+#     - curl -T otus_cpp_lesson_08-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uchernikoff:$BINTRAY_API_KEY "https://api.bintray.com/content/chernikoff/otus/lesson_08/$TRAVIS_BUILD_NUMBER/otus_cpp_lesson_08-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1;"
