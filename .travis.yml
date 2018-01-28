@@ -3,11 +3,21 @@ compiler: clang
 sudo: required
 dist: trusty
 
+branches:
+  except:
+    - gh-pages
+
+env:
+  global:
+    - GH_REPO_NAME: otus_cpp_lesson_08
+    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+    - GH_REPO_REF: github.com/chernikoff/otus_cpp_lesson_08.git
+
 before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get install -qq libgtest-dev
+  - sudo apt-get install -qq libgtest-dev doxygen graphviz
   - mkdir build-gtest
   - cd build-gtest
   - cmake /usr/src/gtest
@@ -20,6 +30,11 @@ script:
   - cmake --build .
   - ctest -V
   - cmake --build . --target package
+
+after_success:
+  - cd $TRAVIS_BUILD_DIR
+  - chmod +x scripts/generateDocumentationAndDeploy.sh
+  - scripts/generateDocumentationAndDeploy.sh
 
 deploy:
   provider: script
