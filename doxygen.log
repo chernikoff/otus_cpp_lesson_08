@@ -12,8 +12,8 @@ Warning: ignoring unsupported tag `DOCBOOK_PROGRAMLISTING =' at line 1983, file 
 Warning: ignoring unsupported tag `PLANTUML_JAR_PATH      =' at line 2412, file /home/travis/build/chernikoff/otus_cpp_lesson_08/Doxyfile
 Warning: ignoring unsupported tag `PLANTUML_CFG_FILE      =' at line 2417, file /home/travis/build/chernikoff/otus_cpp_lesson_08/Doxyfile
 Warning: ignoring unsupported tag `PLANTUML_INCLUDE_PATH  =' at line 2422, file /home/travis/build/chernikoff/otus_cpp_lesson_08/Doxyfile
-Warning: tag INPUT: input source `ip_printer_lib' does not exist
-warning: source ip_printer_lib is not a readable file or directory... skipping.
+Warning: tag INPUT: input source `../ip_printer_lib' does not exist
+warning: source ../ip_printer_lib is not a readable file or directory... skipping.
 Searching for include files...
 Searching for example files...
 Searching for images...
