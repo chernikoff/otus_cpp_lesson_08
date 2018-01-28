@@ -1,4 +1,4 @@
-set(NAME ip_printer)
+set(NAME print_ip)
 
 add_executable(${NAME}
   src/ip_printer.cpp
@@ -15,7 +15,7 @@ target_compile_options(${NAME}
   PUBLIC
   -Werror -Wpedantic -Wall -Wextra)
 
-target_link_libraries(${NAME} ${NAME}_lib)
+target_link_libraries(${NAME} ip_printer_lib)
 
 install(TARGETS ${NAME}
   RUNTIME DESTINATION bin)
