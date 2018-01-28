@@ -47,7 +47,7 @@ print_ip(T const & value)
 /// @tparam T should be string
 /// @param value printable value
 template< typename T >
-typename std::enable_if< std::is_same< T, std::string >::value, void>::type
+typename std::enable_if< std::is_same< T, std::string >::value, void >::type
 print_ip(T const & value)
 {
   std::cout << value << std::endl;
