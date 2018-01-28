@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/ip_printer.dir/src/ip_printer.cpp.o  -o ip_printer 
