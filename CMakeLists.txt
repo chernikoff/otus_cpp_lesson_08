@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(otus_cpp_lesson_08 VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(ip_printer VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(GTest)
 
